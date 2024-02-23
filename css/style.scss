@@ -1,0 +1,20 @@
+// color 
+$primary: #1632bf;
+$primary-80: lighten($primary, 20%);
+$primary-120: darken($primary, 20%);
+
+$black: #000;
+$white: #fff;
+$grey-97: #F7F7F8;
+$grey-80: #C7C9D1;
+$grey-70: #ABADBA;
+$grey-60: #8F92A3;
+$grey-50: #73778C;
+$grey-40: #5C5F70;
+$grey-30: #454754;
+$grey-20: #2E3038;
+
+* {
+    border: solid 1px black;
+}
+
