@@ -1,4 +1,6 @@
-// color 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+// color
 $primary: #1632bf;
 $primary-80: lighten($primary, 20%);
 $primary-120: darken($primary, 20%);
@@ -14,7 +16,216 @@ $grey-40: #5C5F70;
 $grey-30: #454754;
 $grey-20: #2E3038;
 
-* {
-    border: solid 1px black;
+// mixins
+@mixin flex ($j: center, $a: center, $g: 1rem) {
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+    gap: $g;
 }
 
+@mixin breakpoints($mw) {
+    @media(max-width:$mw) {
+        @content;
+    }
+}
+
+* {
+    // border: solid 1px #ccc;
+    font-family: "Inter", "Noto Sans TC", sans-serif;
+    line-height: 100%;
+    letter-spacing: 2px;
+}
+
+body {
+    background-color: $grey-30;
+    @include flex($a: star);
+}
+
+.wrap {
+    max-width: 1280px;
+    margin: 3rem;
+    display: flex;
+    background-color: $white;
+    box-shadow: 0px 12px 24px 8px rgba($black ,0.3);
+}
+
+.aside {
+    width: 25%;
+    // min-width: 240px;
+    padding: 2rem;
+    border-right: solid 1px $grey-80;
+    display: flex;
+    flex-direction: column;
+
+    .userImg {
+        width: min(400px, 100%);
+        border-radius: 50%;
+        overflow: hidden;
+        aspect-ratio: 1/1;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .name,
+    .jobTitle,
+    .address,
+    .about {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .address i {
+        margin-right: 0.5rem;
+    }
+
+    .about {
+        line-height: 150%;
+        text-align: justify;
+    }
+
+    .contact {
+        @include flex($j: end);
+        flex-direction: column;
+        flex-basis: 100%;
+
+        .contact_item {
+            @include flex;
+            flex-direction: column;
+
+            i {
+                font-size: 2rem;
+            }
+        }
+
+        .contact_item:nth-child(-n+2) {
+            &::after {
+                content: '';
+                width: 0.5rem;
+                height: 2px;
+                background-color: $black;
+            }
+        }
+    }
+}
+
+.main {
+    width: 75%;
+    padding: 2rem;
+    position: relative;
+    
+
+    .section {
+        margin-bottom: 2.5rem;
+        .section_title {
+            @include flex($j: start);
+        }
+    }
+
+    .prominent {
+        margin-top: 2rem;
+        .prominents {
+            @include flex($a: start);
+            flex-direction: column;
+            // padding: 1rem 1.5rem;
+
+            li {
+                @include flex($j: start);
+            }
+
+            li::before {
+                content: '';
+                display: inline-block;
+                width: 1rem;
+                height: 2px;
+                background-color: $primary;
+
+            }
+        }
+    }
+    .experience {
+        .experience_item {
+            padding: 1rem 1.5rem;
+            border-bottom: dashed 1px $grey-80;
+            h3 {
+                display: inline-block;
+            }
+            span {
+                margin-left: 1rem;
+                border-left: solid 1px $black;
+                padding-left: 1rem;
+            }
+            h5 {
+                margin-top: 0.5rem;
+            }
+            p {
+                line-height: 150%;
+                li {
+                    margin-bottom: 0.5rem;
+                }
+            }
+            &:nth-last-child(1) {
+                border-bottom: none;
+            }
+        }
+    }
+    .skills {
+        .skill_item {
+            padding: 1rem 1.5rem 0;
+            .group {
+                @include flex($j: start);
+                padding: 0;
+                li {
+                    border: solid 1px $grey-50;
+                    padding: 0.25rem 0.5rem;
+                    border-radius: 0.5rem;
+                    color: $grey-30;
+                }
+            }
+        }
+        .skillIcons {
+            @include flex($j: start);
+            padding: 0;
+            li {
+                width: 2rem;
+                height: 2rem;
+                padding: 0.5rem;
+                background-color: rgba(#333, 0.1);
+                border-radius: 0.5rem;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .education {
+        .education_item {
+            @include flex($j: start);
+            padding: 1rem 1.5rem;
+            border-bottom: dashed 1px $grey-80;
+            h3 {
+                display: inline-block;
+                white-space: nowrap;
+            }
+            .eduInfo {
+                margin-left: 1rem;
+                border-left: solid 1px $black;
+                padding-left: 1rem;
+                white-space: nowrap;
+            }
+            .date {
+                flex-basis: 100%;
+                text-align: right;
+
+            }
+            &:nth-last-child(1) {
+                border-bottom: none;
+            }
+        }
+    }
+}
