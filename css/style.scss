@@ -44,15 +44,24 @@ body {
 
 .wrap {
     max-width: 1280px;
+    width: 100%;
     margin: 3rem;
     display: flex;
     background-color: $white;
     box-shadow: 0px 12px 24px 8px rgba($black ,0.3);
+
+    @include breakpoints(1023px) {
+        align-items: center;
+        flex-direction: column;
+    }
+    @include breakpoints(1023px) {
+        margin: 1.5rem;
+    }
 }
 
 .aside {
     width: 25%;
-    // min-width: 240px;
+    min-width: 240px;
     padding: 2rem;
     border-right: solid 1px $grey-80;
     display: flex;
@@ -63,6 +72,7 @@ body {
         border-radius: 50%;
         overflow: hidden;
         aspect-ratio: 1/1;
+        margin: 0 auto;
 
         img {
             object-fit: cover;
@@ -111,10 +121,43 @@ body {
             }
         }
     }
+
+    @include breakpoints(1023px) {
+        width: 90%;
+        border-right: none;
+        border-bottom: solid 1px $grey-80;
+        .contact {
+            padding: 0;
+            flex-direction: row;
+            justify-content: space-between;
+            .contact_item:nth-child(-n+2) {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include breakpoints(768px) {
+        .contact {
+            margin-top: 2rem;
+            flex-direction: column;
+            align-items: start;
+            
+            .contact_item {
+                flex-direction: row;
+                i {
+                    font-size: 1.5rem;
+                }
+            }
+
+            
+        }
+    }
 }
 
 .main {
-    width: 75%;
+    // width: 75%;
+    flex-basis: 100%;
     padding: 2rem;
     position: relative;
     
@@ -149,7 +192,7 @@ body {
     }
     .experience {
         .experience_item {
-            padding: 1rem 1.5rem;
+            padding: 1rem 2.5rem;
             border-bottom: dashed 1px $grey-80;
             h3 {
                 display: inline-block;
@@ -175,9 +218,10 @@ body {
     }
     .skills {
         .skill_item {
-            padding: 1rem 1.5rem 0;
+            padding: 1rem 2.5rem 0;
             .group {
                 @include flex($j: start);
+                flex-wrap: wrap;
                 padding: 0;
                 li {
                     border: solid 1px $grey-50;
@@ -189,6 +233,7 @@ body {
         }
         .skillIcons {
             @include flex($j: start);
+            flex-wrap: wrap;
             padding: 0;
             li {
                 width: 2rem;
@@ -206,7 +251,7 @@ body {
     .education {
         .education_item {
             @include flex($j: start);
-            padding: 1rem 1.5rem;
+            padding: 1rem 2.5rem;
             border-bottom: dashed 1px $grey-80;
             h3 {
                 display: inline-block;
@@ -225,6 +270,20 @@ body {
             }
             &:nth-last-child(1) {
                 border-bottom: none;
+            }
+        }
+    }
+
+    @include breakpoints(1023px) {
+        // width: 90%;
+    }
+    @include breakpoints(768px) {
+        .education {
+            .education_item {
+                flex-wrap: wrap;
+                .date {
+                    text-align: left;
+                }
             }
         }
     }

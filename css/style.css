@@ -15,14 +15,27 @@ body {
 
 .wrap {
   max-width: 1280px;
+  width: 100%;
   margin: 3rem;
   display: flex;
   background-color: #fff;
   box-shadow: 0px 12px 24px 8px rgba(0, 0, 0, 0.3);
 }
+@media (max-width: 1023px) {
+  .wrap {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 1023px) {
+  .wrap {
+    margin: 1.5rem;
+  }
+}
 
 .aside {
   width: 25%;
+  min-width: 240px;
   padding: 2rem;
   border-right: solid 1px #C7C9D1;
   display: flex;
@@ -33,6 +46,7 @@ body {
   border-radius: 50%;
   overflow: hidden;
   aspect-ratio: 1/1;
+  margin: 0 auto;
 }
 .aside .userImg img {
   -o-object-fit: cover;
@@ -78,9 +92,37 @@ body {
   height: 2px;
   background-color: #000;
 }
+@media (max-width: 1023px) {
+  .aside {
+    width: 90%;
+    border-right: none;
+    border-bottom: solid 1px #C7C9D1;
+  }
+  .aside .contact {
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .aside .contact .contact_item:nth-child(-n+2)::after {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .aside .contact {
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: start;
+  }
+  .aside .contact .contact_item {
+    flex-direction: row;
+  }
+  .aside .contact .contact_item i {
+    font-size: 1.5rem;
+  }
+}
 
 .main {
-  width: 75%;
+  flex-basis: 100%;
   padding: 2rem;
   position: relative;
 }
@@ -117,7 +159,7 @@ body {
   background-color: #1632bf;
 }
 .main .experience .experience_item {
-  padding: 1rem 1.5rem;
+  padding: 1rem 2.5rem;
   border-bottom: dashed 1px #C7C9D1;
 }
 .main .experience .experience_item h3 {
@@ -141,13 +183,14 @@ body {
   border-bottom: none;
 }
 .main .skills .skill_item {
-  padding: 1rem 1.5rem 0;
+  padding: 1rem 2.5rem 0;
 }
 .main .skills .skill_item .group {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
   padding: 0;
 }
 .main .skills .skill_item .group li {
@@ -161,6 +204,7 @@ body {
   justify-content: start;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
   padding: 0;
 }
 .main .skills .skillIcons li {
@@ -178,7 +222,7 @@ body {
   justify-content: start;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem 2.5rem;
   border-bottom: dashed 1px #C7C9D1;
 }
 .main .education .education_item h3 {
@@ -197,4 +241,12 @@ body {
 }
 .main .education .education_item:nth-last-child(1) {
   border-bottom: none;
+}
+@media (max-width: 768px) {
+  .main .education .education_item {
+    flex-wrap: wrap;
+  }
+  .main .education .education_item .date {
+    text-align: left;
+  }
 }/*# sourceMappingURL=style.css.map */
