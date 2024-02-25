@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #454754;
+  background-color: #4d4d4d;
   display: flex;
   justify-content: center;
   align-items: star;
@@ -20,6 +20,17 @@ body {
   display: flex;
   background-color: #fff;
   box-shadow: 0px 12px 24px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+.wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  background-color: #9098ff;
 }
 @media (max-width: 1023px) {
   .wrap {
@@ -34,10 +45,11 @@ body {
 }
 
 .aside {
+  z-index: 10;
   width: 25%;
   min-width: 240px;
   padding: 2rem;
-  border-right: solid 1px #C7C9D1;
+  border-right: solid 1px #cccccc;
   display: flex;
   flex-direction: column;
 }
@@ -61,6 +73,12 @@ body {
   text-align: center;
   margin-top: 1rem;
 }
+.aside .jobTitle {
+  color: #2a39ff;
+}
+.aside .address {
+  color: #4d4d4d;
+}
 .aside .address i {
   margin-right: 0.5rem;
 }
@@ -75,6 +93,7 @@ body {
   gap: 1rem;
   flex-direction: column;
   flex-basis: 100%;
+  padding: 0;
 }
 .aside .contact .contact_item {
   display: flex;
@@ -85,6 +104,7 @@ body {
 }
 .aside .contact .contact_item i {
   font-size: 2rem;
+  color: #4d4d4d;
 }
 .aside .contact .contact_item:nth-child(-n+2)::after {
   content: "";
@@ -96,10 +116,9 @@ body {
   .aside {
     width: 90%;
     border-right: none;
-    border-bottom: solid 1px #C7C9D1;
+    border-bottom: solid 1px #cccccc;
   }
   .aside .contact {
-    padding: 0;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -122,6 +141,7 @@ body {
 }
 
 .main {
+  z-index: 10;
   flex-basis: 100%;
   padding: 2rem;
   position: relative;
@@ -133,7 +153,12 @@ body {
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+}
+.main .section .section_title i {
+  color: #2a39ff;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
 }
 .main .prominent {
   margin-top: 2rem;
@@ -156,11 +181,11 @@ body {
   display: inline-block;
   width: 1rem;
   height: 2px;
-  background-color: #1632bf;
+  background-color: #9098ff;
 }
 .main .experience .experience_item {
   padding: 1rem 2.5rem;
-  border-bottom: dashed 1px #C7C9D1;
+  border-bottom: dashed 1px #cccccc;
 }
 .main .experience .experience_item h3 {
   display: inline-block;
@@ -169,9 +194,11 @@ body {
   margin-left: 1rem;
   border-left: solid 1px #000;
   padding-left: 1rem;
+  color: gray;
 }
 .main .experience .experience_item h5 {
   margin-top: 0.5rem;
+  color: #4d4d4d;
 }
 .main .experience .experience_item p {
   line-height: 150%;
@@ -194,10 +221,10 @@ body {
   padding: 0;
 }
 .main .skills .skill_item .group li {
-  border: solid 1px #73778C;
+  border: solid 1px gray;
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
-  color: #454754;
+  color: #4d4d4d;
 }
 .main .skills .skillIcons {
   display: flex;
@@ -221,9 +248,9 @@ body {
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 1rem;
+  gap: 0;
   padding: 1rem 2.5rem;
-  border-bottom: dashed 1px #C7C9D1;
+  border-bottom: dashed 1px #cccccc;
 }
 .main .education .education_item h3 {
   display: inline-block;
@@ -238,6 +265,7 @@ body {
 .main .education .education_item .date {
   flex-basis: 100%;
   text-align: right;
+  color: gray;
 }
 .main .education .education_item:nth-last-child(1) {
   border-bottom: none;
@@ -249,4 +277,27 @@ body {
   .main .education .education_item .date {
     text-align: left;
   }
+}
+
+.bgTopBox, .bgBottomBox {
+  position: absolute;
+  z-index: 1;
+  filter: blur(3rem);
+  opacity: 0.5;
+  border-radius: 57% 43% 63% 37%/42% 56% 44% 58%;
+  background-image: conic-gradient(from 0deg at top left in srgb, rgb(194, 227, 255) 36% 3%, #2a39ff 61% 100%);
+}
+
+.bgTopBox {
+  top: 16rem;
+  left: -16rem;
+  width: 36rem;
+  height: 36rem;
+}
+
+.bgBottomBox {
+  bottom: -8rem;
+  right: -8rem;
+  width: 16rem;
+  height: 16rem;
 }/*# sourceMappingURL=style.css.map */
