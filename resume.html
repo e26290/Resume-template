@@ -13,14 +13,18 @@
 <body>
     <!-- TODO 更新資料請到 data.js -->
     <div id="app" class="wrap">
+        <div class="bgTopBox"></div>
+        <div class="bgBottomBox"></div>
         <div class="aside">
-            <div class="userImg">
-                <img src="http://fakeimg.pl/200x200" alt="個人形象照">
+            <div>
+                <div class="userImg">
+                    <img :src="userImg" alt="個人形象照">
+                </div>
+                <h1 class="name">{{ twName }} {{ enName }}</h1>
+                <h4 class="jobTitle">{{ jobTitle }}</h4>
+                <p class="address"><i class="fa-solid fa-location-dot"></i>{{ address }}</p>
+                <p class="about">{{ about }}</p>
             </div>
-            <h1 class="name">{{ twName }} | {{ enName }}</h1>
-            <h4 class="jobTitle">{{ jobTitle }}</h4>
-            <span class="address"><i class="fa-solid fa-location-dot"></i>{{ address }}</span>
-            <p class="about">{{ about }}</p>
             <ul class="contact">
                 <li class="contact_item">
                     <i class="fa-solid fa-envelope"></i>
@@ -38,13 +42,13 @@
         </div>
         <div class="main">
             <div class="section prominent">
-                <h2><i class="fa-solid fa-bolt"></i>個人事蹟</h2>
-                <ul>
+                <h2 class="section_title"><i class="fa-solid fa-bolt"></i>個人事蹟</h2>
+                <ul class="prominents">
                     <li v-for="prominent in prominents">{{ prominent }}</li>
                 </ul>
             </div>
             <div class="section experience">
-                <h2><i class="fa-solid fa-briefcase"></i>工作經驗</h2>
+                <h2 class="section_title"><i class="fa-solid fa-briefcase"></i>工作經驗</h2>
                 <div class="experience_item" v-for="exp in experience">
                     <h3>{{ exp.name }}</h3>
                     <span>{{ exp.startDate }} - {{ exp.endDate }}</span>
@@ -53,24 +57,24 @@
                 </div>
             </div>
             <div class="section skills">
-                <h2><i class="fa-solid fa-tree"></i>專業技能</h2>
+                <h2 class="section_title"><i class="fa-solid fa-tree"></i>專業技能</h2>
                 <div class="skill_item" v-for="skill in skills">
                     <h3>{{ skill.title }}</h3>
-                    <ul>
+                    <ul class="group">
                         <li v-for="list in skill.group">{{ list }}</li>
                     </ul>
+                    <ul class="skillIcons">
+                        <li v-for="icon in skill.skillIcons"><img :src="icon" alt=""></li>
+                    </ul>
                 </div>
-                <ul>
-                    <li v-for="icon in skillIcons"><img :src="icon" alt=""></li>
-                </ul>
+                
             </div>
             <div class="section education">
-                <h2><i class="fa-solid fa-book"></i>學歷</h2>
+                <h2 class="section_title"><i class="fa-solid fa-book"></i>學歷</h2>
                 <div class="education_item" v-for="edu in education">
-                    <div class="icon"><i class="fa-solid fa-user-graduate"></i></div>
                     <h3>{{ edu.name }}</h3>
-                    <span>{{ edu.major }} | {{ edu.degree }}</span>
-                    <span>{{ edu.startDate }} - {{ edu.endDate }}</span>
+                    <span class="eduInfo">{{ edu.major }} - {{ edu.degree }}</span>
+                    <span class="date">{{ edu.startDate }} - {{ edu.endDate }}</span>
                 </div>
             </div>
         </div>
