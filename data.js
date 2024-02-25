@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             // 填寫：個人資料
-            userImg: 'https://img.freepik.com/free-photo/men-s-blue-short-sleeves-tee-psd-mockup_53876-143240.jpg?t=st=1708775384~exp=1708778984~hmac=8380ced095900c37a7031530cc50113ff93224f81d673277735f53f04f59e44c&w=1800',
+            userImg: 'user.jpg',
             twName: '羅伯特',
             enName: 'Robert',
             jobTitle: 'Back end Developer',
