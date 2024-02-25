@@ -44,7 +44,7 @@ const app = Vue.createApp({
             skills: [{
                     title: '程式語言',
                     group: ['Java','Python','C++','Ruby','PHP','Node.js'],
-                    skillIcons: ['img/Java.svg','img/Python.svg','img/C++.svg','img/Ruby.svg','img/PHP.svg','img/Nodejs.svg'],
+                    skillIcons: ['img/Java.svg','img/Python.svg','img/C++.svg','img/ruby_01.svg','img/php_01.svg','img/Nodejs.svg'],
                 },{
                     title: '工具和技術',
                     group: ['Git','Gulp','AWS'],
