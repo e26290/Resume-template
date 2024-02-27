@@ -322,13 +322,14 @@ body {
   }
 }
 
-.bgTopBox, .bgBottomBox {
+.bgTopBox,
+.bgBottomBox {
   position: absolute;
   z-index: 1;
   filter: blur(3rem);
-  opacity: 0.5;
+  opacity: 0.3;
   border-radius: 57% 43% 63% 37%/42% 56% 44% 58%;
-  background-image: conic-gradient(from 0deg at top left in srgb, rgb(194, 227, 255) 36% 3%, #2a39ff 61% 100%);
+  background-image: linear-gradient(to bottom left in oklab, oklch(100% 0.1 221) 0%, 38%, oklch(76% 0.48 269) 100%);
 }
 
 .bgTopBox {
