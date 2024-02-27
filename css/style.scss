@@ -74,7 +74,7 @@ body {
 
 .aside {
     z-index: 10;
-    width: 25%;
+    flex-basis: 24%;
     min-width: 240px;
     padding: 2rem;
     border-right: solid 1px $grey-80;
@@ -82,11 +82,12 @@ body {
     flex-direction: column;
 
     .userImg {
-        width: min(400px, 100%);
+        width: min(320px, 100%);
         border-radius: 50%;
         overflow: hidden;
         aspect-ratio: 1/1;
         margin: 0 auto;
+        border: solid 1px $grey-80;
 
         img {
             object-fit: cover;
@@ -147,7 +148,6 @@ body {
     }
 
     @include breakpoints(1023px) {
-        width: 90%;
         border-right: none;
         border-bottom: solid 1px $grey-80;
 
@@ -180,6 +180,10 @@ body {
 
         }
     }
+
+    @include breakpoints(576px) {
+        padding: 2rem 1.25rem 1rem;
+    }
 }
 
 .main {
@@ -209,7 +213,6 @@ body {
         .prominents {
             @include flex($a: start);
             flex-direction: column;
-            // padding: 1rem 1.5rem;
 
             li {
                 @include flex($j: start);
@@ -329,10 +332,6 @@ body {
         }
     }
 
-    @include breakpoints(1023px) {
-        // width: 90%;
-    }
-
     @include breakpoints(768px) {
         .education {
             .education_item {
@@ -340,6 +339,48 @@ body {
 
                 .date {
                     text-align: left;
+                }
+            }
+        }
+    }
+
+    @include breakpoints(576px) {
+        padding: 0 1.25rem;
+        .prominent {
+            .prominents {
+                padding: 0;
+            }
+        }
+        .experience {
+            .experience_item {
+                padding: 1rem 0;
+                @include flex($a: start, $g: 0.75rem);
+                flex-direction: column;
+                span {
+                    margin-left: 0;
+                    border-left: none;
+                    padding-left: 0;
+                }
+                h5 {
+                    margin-top: 0;
+                }
+            }
+        }
+        .skills {
+            .skill_item {
+                padding: 1rem 0 0;
+            }
+        }
+        .education {
+            .education_item {
+                padding: 1rem 0;
+                flex-direction: column;
+                align-items: start;
+                gap: 0.75rem;
+                .eduInfo {
+                    margin-left: 0;
+                    border-left: none;
+                    padding-left: 0;
                 }
             }
         }

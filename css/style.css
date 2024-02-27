@@ -46,7 +46,7 @@ body {
 
 .aside {
   z-index: 10;
-  width: 25%;
+  flex-basis: 24%;
   min-width: 240px;
   padding: 2rem;
   border-right: solid 1px #cccccc;
@@ -54,11 +54,12 @@ body {
   flex-direction: column;
 }
 .aside .userImg {
-  width: min(400px, 100%);
+  width: min(320px, 100%);
   border-radius: 50%;
   overflow: hidden;
   aspect-ratio: 1/1;
   margin: 0 auto;
+  border: solid 1px #cccccc;
 }
 .aside .userImg img {
   -o-object-fit: cover;
@@ -114,7 +115,6 @@ body {
 }
 @media (max-width: 1023px) {
   .aside {
-    width: 90%;
     border-right: none;
     border-bottom: solid 1px #cccccc;
   }
@@ -137,6 +137,11 @@ body {
   }
   .aside .contact .contact_item i {
     font-size: 1.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .aside {
+    padding: 2rem 1.25rem 1rem;
   }
 }
 
@@ -276,6 +281,44 @@ body {
   }
   .main .education .education_item .date {
     text-align: left;
+  }
+}
+@media (max-width: 576px) {
+  .main {
+    padding: 0 1.25rem;
+  }
+  .main .prominent .prominents {
+    padding: 0;
+  }
+  .main .experience .experience_item {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 0.75rem;
+    flex-direction: column;
+  }
+  .main .experience .experience_item span {
+    margin-left: 0;
+    border-left: none;
+    padding-left: 0;
+  }
+  .main .experience .experience_item h5 {
+    margin-top: 0;
+  }
+  .main .skills .skill_item {
+    padding: 1rem 0 0;
+  }
+  .main .education .education_item {
+    padding: 1rem 0;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.75rem;
+  }
+  .main .education .education_item .eduInfo {
+    margin-left: 0;
+    border-left: none;
+    padding-left: 0;
   }
 }
 
