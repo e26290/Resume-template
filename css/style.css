@@ -30,7 +30,7 @@ body {
   right: 0;
   width: 3rem;
   height: 3rem;
-  background-color: #9098ff;
+  background-image: linear-gradient(42deg, rgb(92, 35, 237) 0%, rgb(141, 138, 246) 31%, rgb(191, 240, 255) 62%);
 }
 @media (max-width: 1023px) {
   .wrap {
