@@ -59,8 +59,7 @@ body {
         right: 0;
         width: 3rem;
         height: 3rem;
-        // background-color: $primary-80;
-        background-color: red;
+        background-color: $primary-80;
     }
 
     @include breakpoints(1023px) {
@@ -403,11 +402,13 @@ body {
     z-index: 1;
     -webkit-filter: blur(3rem);
     filter: blur(3rem);
-    // backdrop-filter: blur(3rem);
-    // -webkit-backdrop-filter: blur(3rem);
     opacity: 0.5;
     border-radius: 57% 43% 63% 37% / 42% 56% 44% 58%;
     background-image: linear-gradient(42deg, rgba(92,35,237,1) 0%, rgba(141,138,246,1) 31%, rgba(191,240,255,1) 62%);
+
+    @include breakpoints(576px) {
+        display: none;
+    }
 }
 
 .bgTopBox {
